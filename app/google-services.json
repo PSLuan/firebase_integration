@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "850183918864",
+    "project_id": "ineed-authentication",
+    "storage_bucket": "ineed-authentication.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:850183918864:android:3d3fdcc397891265360195",
+        "android_client_info": {
+          "package_name": "com.example.appautenticacao"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAyphwly4h8Ws8eKT1q2QLy80xUtAcfQPs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
