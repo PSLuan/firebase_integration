@@ -2,6 +2,7 @@ package com.example.appautenticacao;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -9,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.appautenticacao.databinding.ActivityLoginBinding;
 import com.google.firebase.auth.FirebaseAuth;
+
+import java.util.Objects;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -23,9 +26,7 @@ public class LoginActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance(); //comunicacação com firebase
 
-        binding.textCadastro.setOnClickListener(v -> {
-            startActivity(new Intent(this, CadastroActivity.class));
-        });
+        binding.textCadastro.setOnClickListener(v -> startActivity(new Intent(this, CadastroActivity.class)));
 
         binding.textRecuperaConta.setOnClickListener(v ->
                 startActivity(new Intent(this, RecuperaContaActivity.class)));
@@ -54,9 +55,9 @@ public class LoginActivity extends AppCompatActivity {
                 binding.progressBar.setVisibility(View.GONE);
                 Toast.makeText(this, "Ocorreu um erro.", Toast.LENGTH_SHORT).show();
             }
-            task.getResult().getUser().getIdToken(true).addOnSuccessListener(getTokenResult -> {
-                String idToken = getTokenResult.getToken(); //retorna bearer token do usuario do firebase
-            });
+            Objects.requireNonNull(task.getResult().getUser()).getIdToken(true)
+                    .addOnSuccessListener(getTokenResult ->
+                            Log.i(null, Objects.requireNonNull(getTokenResult.getToken())));
         });
     }
 }
