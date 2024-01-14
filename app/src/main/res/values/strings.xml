@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">App Autenticação</string>
+    <string name="documento">Selecione o documento</string>
 </resources>

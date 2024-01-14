@@ -50,7 +50,7 @@ public class LoginActivity extends AppCompatActivity {
         mAuth.signInWithEmailAndPassword(email, senha).addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 finish();
-                startActivity(new Intent(this, MainActivity.class));
+                startActivity(new Intent(this, CriaContaActivity.class));
             } else {
                 binding.progressBar.setVisibility(View.GONE);
                 Toast.makeText(this, "Ocorreu um erro.", Toast.LENGTH_SHORT).show();
